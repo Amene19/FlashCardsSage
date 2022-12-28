@@ -1,9 +1,3 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
-}
 
 .App{
   display: flex;
@@ -18,6 +12,11 @@
   align-items: center;
 }
 
+.App h1 {
+  font-size: 32px;
+  text-align: center;
+}
+
 .decks {
   display: grid;
   width: 600px;
@@ -26,6 +25,7 @@
   grid-gap: 10px;
   color: black;
 }
+
 
 .decks li {
   display: flex;

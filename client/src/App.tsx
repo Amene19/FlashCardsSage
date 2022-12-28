@@ -1,6 +1,5 @@
-import { JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useEffect, useState } from 'react';
+import './App.css';
 import { Link } from 'react-router-dom';
 import { getDecks, TDeck } from './api/getDecks';
 import { createdDeck } from './api/createDeck';
@@ -33,7 +32,9 @@ export default function App(): JSX.Element {
     
   }, [])
   return (
+    <div className="container"> 
     <div className="App">
+      <h1>Your Decks</h1>
       <ul className='decks'>
         {
           decks.map((deck)=>(
@@ -58,6 +59,7 @@ export default function App(): JSX.Element {
         />
         <button>Create Deck</button>
       </form>
+    </div>
     </div>
   )
 }
