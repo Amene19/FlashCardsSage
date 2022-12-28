@@ -35,8 +35,16 @@
   background: white;
   border: 1px solid wheat;
   border-radius: 20px;
+  position: relative;
 }
 
 .decks li:hover {
   background: #eee;
+}
+
+.decks li button {
+  position: absolute;
+  font-size: 10px;
+  top: 5px;
+  right: 5px;
 }

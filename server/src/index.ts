@@ -7,7 +7,7 @@ import cors from 'cors';
 
 import Deck from "./models/Deck"
 
-const PORT = 5000;
+const PORT = 5020;
 
 const app = express();
 
@@ -28,6 +28,13 @@ app.post('/decks', async (req: Request, res: Response)=>{
     res.json(createdDeck);
     
 })
+
+app.delete('/decks/:deckId', async (req: Request,res: Response) => {
+    const deckId = req.params.deckId;
+    await Deck.findByIdAndDelete(deckId);
+    res.json();
+
+});
 
 
 
