@@ -14,9 +14,12 @@ export default function App(): JSX.Element {
   const [title, setTitle] = useState("");
   async function handleCreateDeck(e: React.FormEvent){
     e.preventDefault();
-    const deck = await createdDeck(title);
-    setDecks([...decks,deck]);
-    setTitle("");
+    if (title.length > 0) {
+        const deck = await createdDeck(title);
+        setDecks([...decks,deck]);
+        setTitle("");
+    }
+    
   }
 
   async function handleDeleteDeck(deckId: string) {
@@ -52,8 +55,8 @@ export default function App(): JSX.Element {
           id='deck-title'
           value={title}
           onChange={(e: React.ChangeEvent<HTMLInputElement>) => 
-            {
-              setTitle(e.target.value);
+            {   
+              setTitle(e.target.value);                       
             }
           }
         />

@@ -14,9 +14,12 @@ export default function Deck(){
     const {deckId} = useParams();
     async function handleCreateDeck(e: React.FormEvent){
         e.preventDefault();
-        const { cards: serverCards } = await createCard(deckId!, text);
-        setCards(serverCards)
-        setText("");
+        if (text.length > 0) {
+            const { cards: serverCards } = await createCard(deckId!, text);
+            setCards(serverCards)
+            setText("");
+        }
+        
     }
 
     async function handleDeleteCard(index: number) {
